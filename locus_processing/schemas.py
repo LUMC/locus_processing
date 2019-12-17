@@ -52,7 +52,6 @@ class HaplotypeSchema(Schema):
     name = fields.Str(allow_none=True)
     type = fields.Str(allow_none=True)
     snps = fields.List(fields.Str(), allow_none=True)
-    activity = fields.Str(allow_none=True)
 
     @post_load
     def make_haplotype(self, data):

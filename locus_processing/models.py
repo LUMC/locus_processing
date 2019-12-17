@@ -160,11 +160,10 @@ class Snp(object):
 
 
 class Haplotype(object):
-    def __init__(self, name: str, type: str, snps: List[str], activity: str):
+    def __init__(self, name: str, type: str, snps: List[str]):
         self.name = name
         self.type = type
         self.snps = snps
-        self.activity = activity
 
     def __repr__(self):
         fmt = "<Haplotype(name={n}, type={t})>".format(

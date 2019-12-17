@@ -41,10 +41,6 @@
                 "required": [],
                 "type": "object",
                 "properties": {
-                    "activity": {
-                        "title": "activity",
-                        "type": "string"
-                    },
                     "name": {
                         "title": "name",
                         "type": "string"
