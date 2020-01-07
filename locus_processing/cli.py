@@ -86,9 +86,11 @@ def _validate_single_locus(path):
     except ValueError as error:
         return_str = "ERROR, {r}".format(r=str(error))
         click.secho(return_str, fg="red")
+        return 1
     else:
         return_str = "PASS"
         click.secho(return_str, fg="green")
+        return 0
 
 
 @click.command(short_help="Validate locus definiton files")
@@ -100,10 +102,12 @@ def _validate_single_locus(path):
               callback=_validate_inputs)
 def validate_locus(input=None, input_directory=None):
     if input is not None:
-        _validate_single_locus(input)
+        exit(_validate_single_locus(input))
     else:
+        ret = 0
         for y in input_directory:
-            _validate_single_locus(y)
+            ret += _validate_single_locus(y)
+        exit(ret)
 
 
 def _complete_single_locus(fpath):
