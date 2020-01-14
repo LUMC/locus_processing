@@ -81,12 +81,24 @@ class LocusSchema(Schema):
             raise ValidationError("snp id's are not unique")
 
         hap_types = []
+        hap_snps = []
+        first = True
         for hap in data['haplotypes']:
             hap_types.append(hap.type)
+            hap_snps.extend(hap.snps)
             for snp in hap.snps:
                 if snp not in snp_ids:
-                    raise ValidationError("Haplotype {0} is malformed".format(hap))
+                    raise ValidationError("Haplotype {0} has unknown SNP".format(hap))
+
+            if not first and hap.snps == []:
+                raise ValidationError("Haplotype without variants is not first entry")
+
+            first = False
 
         # Make sure there are only unique hap id's
         if len(hap_types) != len(set(hap_types)):
             raise ValidationError("hap types's are not unique")
+
+        # Make sure that all variants end up in a haplotype
+        if set(hap_snps) != set(snp_ids):
+            raise ValidationError("Some SNPs are not used in haplotypes")
