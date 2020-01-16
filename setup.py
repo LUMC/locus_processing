@@ -11,7 +11,7 @@ setup(
     packages=["locus_processing"],
     install_requires=[
         "click>=6.7",
-        "marshmallow==2.13.5",
+        "marshmallow==2.15.1",
         "requests>=2.18.1",
         "pyyaml>=3.12"
     ],
