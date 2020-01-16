@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name="locus_processing",
-    version="0.0.3",
+    version="0.0.4",
     description="Tools for working with locus definition files",
     author="Sander Bollen",
     author_email="a.h.b.bollen@lumc.nl",
