@@ -7,7 +7,6 @@ setup(
     author="Sander Bollen",
     author_email="a.h.b.bollen@lumc.nl",
     url="https://git.lumc.nl/PharmacogenomicsPipe/locus_processing",
-    license="MIT",
     platforms=['any'],
     packages=["locus_processing"],
     install_requires=[
@@ -31,7 +30,7 @@ setup(
         'Operating System :: OS Independent',
         'Programming Language :: Python',
         'Topic :: Scientific/Engineering',
-        'License :: MIT License',
+        "License :: OSI Approved :: MIT License",
     ],
     keywords='bioinformatics'
 )
