@@ -2,11 +2,11 @@ from setuptools import setup
 
 setup(
     name="locus_processing",
-    version="0.0.2",
+    version="0.0.3",
     description="Tools for working with locus definition files",
     author="Sander Bollen",
     author_email="a.h.b.bollen@lumc.nl",
-    url="https://git.lumc.nl/PharmacogenomicsPipe/locus_processing",
+    url="https://github.com/LUMC/locus_processing",
     platforms=['any'],
     packages=["locus_processing"],
     install_requires=[
